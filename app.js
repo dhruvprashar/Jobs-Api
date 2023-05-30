@@ -26,6 +26,7 @@ const RateLimit = require('express-rate-limit');
 
 app.use(express.json());
 // extra packages
+app.set('trust proxy',1);
 app.use(rateLimiter({
   windowMs: 15*60*1000, //15min
   max:100, //each IP have 100 req per windowMs
@@ -34,6 +35,9 @@ app.use(helmet())
 app.use(cors())
 app.use(xss())
 
+app.get('/',(req,res)=>{
+  res.send('Jobs Api')
+})
 
 // routes
 app.use('/api/v1/auth',authRouter)
