@@ -8,7 +8,7 @@ const auth = (req,res,next) =>{
     console.log(authHeader)
     if(!authHeader || !authHeader.startsWith('Bearer '))
     {
-        throw new UnauthenticatedError('Authentication Invalid')
+        throw new UnauthenticatedError('Authentication was Invalid')
 
     }
     const token= authHeader.split(' ')[1]
