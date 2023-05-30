@@ -70,6 +70,20 @@ paths:
       summary: Create Job
       operationId: CreateJob
       parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateJobRequest'
+              - example:
+                  company: Random
+                  position: FullStack Developer
+            example:
+              company: Random
+              position: FullStack Developer
+        required: true
       responses:
         '200':
           description: ''
