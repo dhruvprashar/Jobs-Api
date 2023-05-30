@@ -213,6 +213,7 @@ components:
     bearer:
       type: http
       scheme: bearer
+      bearerFormat: JWT 
 security: []
 tags:
 - name: Auth
